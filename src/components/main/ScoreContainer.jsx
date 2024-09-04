@@ -7,7 +7,7 @@ export const ScoreContainer = ({ score }) => {
     };
 
     return (
-        <section className='flex gap-4 flex-row justify-center items-center'>
+        <section className='flex gap-3 sm:gap-9 flex-row justify-center items-center'>
             <div className={`${styles.scoreContainer} bg-[#48D2FE] `}>
                 <p className={styles.playerText}>PLAYER X</p>
                 <p className={styles.scoreText}>{score.X}</p>
