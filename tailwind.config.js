@@ -12,6 +12,10 @@ export default {
         background: "#5A1E76",
       },
       screens: {
+        'lg': '1000px',
+        'sm': '600px',
+        'vs': '450px',
+        'vvs': '310px', //* Responsive to 250px screen !!!
       },
     },
   },

@@ -2,7 +2,7 @@ export const ScoreContainer = ({ score }) => {
 
     const styles = {
         scoreContainer: 'flex flex-col justify-center items-center w-24 h-20 text-black rounded-lg',
-        playerText: 'text-base font-medium',
+        playerText: ' vs:text-base text-xs font-medium',
         scoreText: 'font-bold text-2xl',
     };
 
