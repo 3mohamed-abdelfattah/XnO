@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Buttons from '../../components/Buttons'
+import Buttons from '@/components/Buttons'
 
 export const HomePage = () => {
 
@@ -69,8 +69,8 @@ const PlayBoard = () => {
 const ActionButtons = () => {
     return (
         <section className='flex flex-col mt-14 gap-3'>
-            <button className='bg-[#F4F6F5] text-black p-3 rounded'>New Game</button>
-            <button className='bg-[#664774] text-white p-3 rounded'>Reset Score</button>
+            <button className='bg-[#F4F6F5] hover:bg-[#f4f6f5c2] text-black p-3 rounded active:scale-105'>New Game</button>
+            <button className='bg-[#664774] hover:bg-[#664774cb] text-white p-3 rounded active:scale-105'>Reset Score</button>
         </section>
     )
 }
