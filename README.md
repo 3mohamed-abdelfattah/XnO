@@ -31,8 +31,6 @@ This is a Tic-Tac-Toe game built with React, Context API, and Tailwind CSS. It f
   </tr>
   <tr align='center'>
     <td><img width="280px" src="https://github.com/user-attachments/assets/942c6061-4fa1-409e-ab65-78e4fa0006bf" alt="iPhone 14 Pro Max"  style="border: 5px solid #92E3A9;"/></td>
-  </tr>
-    <tr align='center'>
     <td><img width="280px" src="https://github.com/user-attachments/assets/942c6061-4fa1-409e-ab65-78e4fa0006bf" alt="iPhone 14 Pro Max"  style="border: 5px solid #92E3A9;"/></td>
   </tr>
 </table>
