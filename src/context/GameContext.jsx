@@ -1,13 +1,32 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
-    const [board, setBoard] = useState(Array(9).fill(''));
-    const [currentPlayer, setCurrentPlayer] = useState('X');
-    const [score, setScore] = useState({ X: 0, O: 0, draw: 0 });
+    const [board, setBoard] = useState(() => {
+        // Load board from localStorage
+        const savedBoard = localStorage.getItem('board');
+        return savedBoard ? JSON.parse(savedBoard) : Array(9).fill('');
+    });
+    const [currentPlayer, setCurrentPlayer] = useState(() => {
+        // Load currentPlayer from localStorage
+        const savedPlayer = localStorage.getItem('currentPlayer');
+        return savedPlayer || 'X';
+    });
+    const [score, setScore] = useState(() => {
+        // Load score from localStorage
+        const savedScore = localStorage.getItem('score');
+        return savedScore ? JSON.parse(savedScore) : { X: 0, O: 0, draw: 0 };
+    });
     const [isGameOver, setIsGameOver] = useState(false);
     const [winningCombination, setWinningCombination] = useState([]);
+
+    useEffect(() => {
+        // Save to localStorage
+        localStorage.setItem('board', JSON.stringify(board));
+        localStorage.setItem('currentPlayer', currentPlayer);
+        localStorage.setItem('score', JSON.stringify(score));
+    }, [board, currentPlayer, score]);
 
     const checkWinner = (board) => {
         const winPatterns = [
