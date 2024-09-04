@@ -7,10 +7,10 @@ export const HomePage = () => {
         <Fragment>
             <TicTacText />
             <main className='flex relative h-screen justify-center items-center'>
-                <div className='w-[30%] h-4/5 rounded-3xl bg-[#2B0040] p-16'>
+                <div className='w-[30%] h-[90%] rounded-3xl bg-[#2B0040] p-16'>
                     <ScoreContainer />
                     <PlayBoard />
-                    <section></section>
+                    <ActionButtons />
                 </div>
             </main>
         </Fragment>
@@ -61,6 +61,16 @@ const PlayBoard = () => {
             <Buttons />
             <Buttons />
             <Buttons />
+        </section>
+    )
+}
+
+// Action Buttons
+const ActionButtons = () => {
+    return (
+        <section className='flex flex-col mt-14 gap-3'>
+            <button className='bg-[#F4F6F5] text-black p-3 rounded'>New Game</button>
+            <button className='bg-[#664774] text-white p-3 rounded'>Reset Score</button>
         </section>
     )
 }
