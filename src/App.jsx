@@ -1,12 +1,11 @@
-import { Fragment } from 'react'
-import { HomePage } from './pages/home'
+import { HomePage } from '@/pages/home'
+import { GameProvider } from '@/context/GameContext'
 
 function App() {
-
   return (
-    <Fragment>
+    <GameProvider>
       <HomePage />
-    </Fragment>
+    </GameProvider>
   )
 }
 
