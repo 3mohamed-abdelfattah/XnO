@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { Slide, toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const GameContext = createContext();
 
@@ -45,12 +47,14 @@ export const GameProvider = ({ children }) => {
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
                 setIsGameOver(true);
                 setWinningCombination(pattern);
+                toast(`❌Player ${board[a]} wins!⭕`);
                 return board[a];
             }
         }
 
         if (board.every(cell => cell)) {
             setIsGameOver(true);
+            toast('🏳️ It\'s a draw!');
             return 'draw';
         }
 
@@ -89,6 +93,19 @@ export const GameProvider = ({ children }) => {
     return (
         <GameContext.Provider value={{ board, currentPlayer, score, handleMove, resetScores, newGame, isGameOver, winningCombination }}>
             {children}
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover={false}
+                theme="dark"
+                transition={Slide}
+            />
         </GameContext.Provider>
     );
 };
